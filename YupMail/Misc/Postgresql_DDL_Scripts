@@ -1,0 +1,29 @@
+-- Table: public.yupm_accounts
+
+-- DROP TABLE public.yupm_accounts;
+
+CREATE TABLE public.yupm_accounts
+(
+    accountaddress character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT yupm_accounts_pkey PRIMARY KEY (accountaddress)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.yupm_accounts
+    OWNER to mailadm;
+
+
+CREATE OR REPLACE FUNCTION public.hm_yupm_sync() RETURNS TRIGGER AS $example_table$  
+    BEGIN  
+        INSERT INTO public.yupm_accounts(accountaddress) VALUES (new.accountaddress);  
+        RETURN NEW;   
+    END;  
+$example_table$ LANGUAGE plpgsql;  
+
+
+
+CREATE TRIGGER yupm_sync_trigger AFTER INSERT ON public.hm_accounts  
+FOR EACH ROW EXECUTE PROCEDURE public.hm_yupm_sync();  
