@@ -90,10 +90,7 @@
 		</script>
 </head>
 <body>
-
-  <br/>
-  
-  <table width="90%" border="0" cellpadding="0" cellspacing="0" align="center">
+<!--<table width="90%" border="0" cellpadding="0" cellspacing="0" align="center">
   <tr>
      <td>
          <font face="verdana, arial" size="1">
@@ -102,21 +99,27 @@
      </td>
   </tr>
   </table>
-  <br/>
    
 
    
   <table height="500" width="90%" class="mainborder" id="maintable" cellpadding="8" border="0" align="center">
       <tr> 
-            <td valign="top" align="left">
+            <td valign="top" align="left"> 
+               <p>
+               <font face="verdana, arial" size="1">
+         YUP MAIL NEW USER REGISTRATION
+         </font>
+               </p>-->
                <?php
                
                   include "hm_register.php";
                ?>
-            </td>                     
+         <!--  
+         </td>                     
 .      </tr>
 
 </table>
+-->
 
 </body>
 </html>

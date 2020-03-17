@@ -27,7 +27,7 @@
    
    $page = hmailGetVar("page");
    
-   if ($page == "" | $page =="hm_frontpage")
+   if ($page == ""||$page=="hm_frontpage")
       $page = "frontpage";
 
    $isbackground = (substr($page, 0,10) == "background");
@@ -70,8 +70,8 @@
 
 		<TITLE>YupMail</TITLE>
 
-		<link href="style.css" type="text/css" rel="stylesheet">
-      <link href="include/tabber/tabber.css" type="text/css" rel="stylesheet">
+		<!--<link href="indexcss.css" type="text/css" rel="stylesheet"> 
+      <link href="include/tabber/tabber.css" type="text/css" rel="stylesheet"> -->
       
 		<script type="text/javascript" src="include/formcheck.js"></script>
 		<script type="text/javascript" src="include/dtree.js"></script>

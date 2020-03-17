@@ -10,6 +10,7 @@ session_start();
 // Enable CSRF protection
 ensure_csrf_session_token_exists();
 
+
 // Connect to hMailServer
 try
 {
@@ -41,6 +42,7 @@ try
    if (isset($_SESSION['session_username']) && 
        isset($_SESSION['session_password']))
    {
+   
       // Authenticate the user
       echo "<script>console.log('u: ".$_SESSION['session_username']." p: ".$_SESSION['session_password']."')</script>" ;
    	$obBaseApp->Authenticate($_SESSION['session_username'], $_SESSION['session_password']);

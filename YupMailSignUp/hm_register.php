@@ -3,68 +3,99 @@
       exit();
 
 ?>
-   <br/>
-   <br/>
-   <form action="<?php echo $hmail_config['rooturl']; ?>index.php" method="post" onSubmit="return formCheck(this);" name="mainform">
    
-      <?php
-	     PrintHiddenCsrfToken();
-           PrintHidden("page", "background_register");
-      ?>
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>YupMail</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="style_login.css">
 
-      <br/><br/>
-      <div align="center">
-         <img src="images/hm_logotype.jpg" border="0" align="middle" alt="">  
-      </div>
+</head>
+<body>
+<section class="container">
+		    <article class="half">
+			        <h1>YupMail</h1>
+			        <div class="tabs">
+					<span class="tab signin "><a href="http://localhost/YupMail/">Sign in</a></span>
+					<span class="tab signup active"><a href="http://localhost/YupMailSignUP/">Sign up</a></span>
+					</div>
+					<div class="content">
+                 	<div class="signin-cont cont">
+   					<form action="<?php echo $hmail_config['rooturl']; ?>index.php" method="post" onSubmit="return formCheck(this);" name="mainform">
+      				<?php
+	     				PrintHiddenCsrfToken();
+           				PrintHidden("page", "background_register");
+      				?>
       
-      <table width="250" align="center">
-         <tr>
-            <td>
-
-            	<br/><br/>
-            	<?php
-            	   $error = hmailGetVar("status");
+            		<?php
+            	   		$error = hmailGetVar("status");
 				   
 				   //echo  hmailGetVar("user");
 				   //echo hmailGetVar(track);
 				   
             	   if ($error == "1")
-            	   {
-						EchoTranslation("Server currently unavailable. Try again later.");
-						echo "<br/><br/>";  
+				   { ?>
+				    	<div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+						Server currently unavailable. Try again later.
+                        </div>
+				    <?php
             	   }
 				   else if ($error =='2')
-				   {
-						EchoTranslation("Account already exist. Try with different username.");
-						echo "<br/><br/>";  
+				   { ?>
+				   		<div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+						Account already exist. Try with different username.
+                        </div>
+				    <?php
 				   }				   
 				   else if ($error =='3')
 				   {
-						EchoTranslation("Account Created.");
-						echo "<br/><br/>";  
+					?>
+					<div class="alertg">
+				    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+					Account Created.
+				 	</div>
+			 		<?php
 				   }
 				   else if ($error =='4')
 				   {
-						EchoTranslation("Invalid user name or password.");
-						echo "<br/><br/>";  
+					?>
+					<div class="alert">
+				    <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+					Invalid user name or password.
+				 	</div>
+			 		<?php
 				   }				   
 				 
-            	?>
-               
-            	<?php EchoTranslation("Your Prefered Email")?>:<br/>
-            	<input type="text" name="username" size="25" maxlength="256" /> 
+				?>
+				
+				<p style = "font-size:14px;">
+            	<?php EchoTranslation("Your Prefered Email")?>
+            	<input type="text" name="username" size="25" maxlength="256" class="inpt" /> 
 				<?php EchoTranslation("@yup.mail")?><br/>
-		<br/>
+				</p>
+				<p style = "font-size:14px;">
             	<?php EchoTranslation("Password")?>:<br/>
-            	<input type="password" name="password" size="25" maxlength="256" autocomplete="off" /><br/>
-            	<br/>
-            	<input type="submit" value="<?php EchoTranslation("Create")?>" />
-            </td>
-         </tr>
-      </table>
+            	<input type="password" name="password" size="25" maxlength="256" autocomplete="off" class = "inpt" /><br/>
+				</p>
+				<div class="submit-wrap">
+            	<input type="submit" value="<?php EchoTranslation("Create")?>" class = "submit"/>
+				</div>
+				  
+   				</form>
+   </div>
+                 </div>
+          </article>
+          <div class="half bg" style="background-color: black;text-align:center;"><img src ="images\YupMailLogo.png" >
+         <p style="color:aliceblue;"> Your secure Mail</br>[need to edit] </p></div>
+</section>
    
-   </form>
-   <a href="http://localhost/YupMail/"> Login </a>
-   <script type="text/javascript">
-      document.mainform.username.focus();
-   </script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script  src="function_login.js"></script>
+
+</body>
+</html>
