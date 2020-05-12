@@ -1,0 +1,52 @@
+*
+{
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: sans-serif;
+}
+#nav-bar
+{
+	position: sticky;
+	top: 0;
+	z-index: 10;
+
+}
+.navbar
+{
+	background-image: linear-gradient(to right, #000000, #aaaaaa );
+	padding: 0 !important;
+}
+.navbar-brand
+{
+	height: 80px !important;
+	padding-left: 20px;
+}
+.navbar-nav li
+{
+	padding: 0 10px;
+}
+.navbar-nav li a
+{
+	color: #fff !important;
+	font-weight: 600;
+}
+#banner
+{
+	background-image: linear-gradient(to right, #000000, #aaaaaa );
+	color: #fff;
+	padding-top: 5%; 
+}
+.promo-title
+{
+	font-size: 40px;
+	font-weight: 600;
+	margin-top: 100px;
+	margin-left: 50px;
+}
+.bottom_img
+{
+	width: 10%;
+}
