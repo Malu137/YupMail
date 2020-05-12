@@ -7,13 +7,16 @@
         ?>
 <div id="listData" class="list-form-container">
     <?php
+
+        $MailFolderName = hmailGetVar("imapfolderName","");
 		
 		//The location of the mailbox.
-		$mailbox = '{imap.yup.mail:143/imap}INBOX';
+		$mailbox = '{imap.yup.mail:143/imap}'.$MailFolderName;
 		//The username / email address that we want to login to.
 		$username =  $_SESSION['session_username'];
 		//The password for this email address.
-		$password = $_SESSION['session_password'];
+        $password = $_SESSION['session_password'];
+        
 
  
 		//Attempt to connect using the imap_open function.
@@ -25,6 +28,7 @@
         if (! empty($emailData)) {
             ?>
     <table>
+            
         <?php
             foreach ($emailData as $emailIdent) {
                 
@@ -33,6 +37,7 @@
                 $messageExcerpt = substr($message, 0, 150);
                 $partialMessage = trim(quoted_printable_decode($messageExcerpt)); 
                 $date = date("d F, Y", strtotime($overview[0]->date));
+                $flag = $overview[0]->seen ;
                 ?>
         <tr>
             <td><span class="column">
@@ -43,6 +48,9 @@
             </span><span class="date">
                     <?php echo $date; ?>
             </span></td>
+            <td>
+                <?php echo $flag; ?>
+            </td>
         </tr>
         <?php
             } // End foreach

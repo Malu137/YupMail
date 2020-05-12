@@ -2,6 +2,8 @@
 session_start();
 session_destroy();
 
+
+
 define('IN_WEBADMIN', true);
 require_once("config.php");
 

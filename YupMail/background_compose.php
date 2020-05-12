@@ -35,6 +35,8 @@ if (!defined('IN_WEBADMIN'))
             $oMessage->Body = $msgBody;
             $trackStage++;
             $oMessage->Save();
+
+            Echo("Message Sent successfully");
         }
         catch(Exception $e)
         {

@@ -38,42 +38,7 @@ $imapFolderCount = $obIMAPFolders->Count;
 //$dtree .= "d.add(" . $dtitem++ .",0,'" . $accountaddress . "','','','','" . "images/user.png','" . "images/user.png');\r\n";
 
 
-$IMAPFolderList = array("Inbox", "Drafts", "Sent", "Trash");
 
-foreach ($IMAPFolderList as &$Item) {
-    try{
-        $obIMAPFolder = $obIMAPFolders->ItemByName($Item);
-        $IMAPFolderName = $obIMAPFolder->Name;
-        $IMAPFolderDBID = $obIMAPFolder->ID;
-        $urlIMAP = htmlentities("index.php?page=imapfolderview&imapfolderindex=".$IMAPFolderDBID);
-        $dtree .= "d.add(" . $dtitem++ .",1,'" . GetStringForJavaScript("$IMAPFolderName") . "','$urlIMAP','','','" . "images/user.png','" . "images/user.png');\r\n";    
-    }
-    catch(Exception $e){
-
-    }
-
-    //$value = $value * 2;
-}
-
-
-// $urlEP = htmlentities("index.php?page=profile");
-// //&action=view&accountid=" . $obAccount->ID . "&domainid=" . $obDomain->ID);
-// $dtree .= "d.add(" . $dtitem++ .",1,'" . GetStringForJavaScript("View Profile") . "','$urlEP','','','" . "images/user.png','" . "images/user.png');\r\n";
-
-// $urlcp = htmlentities("index.php?page=changepw");
-// $dtree .= "d.add(" . $dtitem++ .",1,'" . GetStringForJavaScript("Change Password") . "','$urlcp','','','" . "images/user.png','" . "images/user.png');\r\n";
-
-// $urlCom = htmlentities("index.php?page=compose");
-// //&action=edit&accountid=" . $obAccount->ID . "&domainid=" . $obDomain->ID);
-// $dtree .= "d.add(" . $dtitem++ .",0,'" . GetStringForJavaScript("Compose Mail") . "','$urlCom','','','" . "images/user.png','" . "images/user.png');\r\n";
-
-// $urlCom = htmlentities("index.php?page=addressbk");
-// //&action=edit&accountid=" . $obAccount->ID . "&domainid=" . $obDomain->ID);
-// $dtree .= "d.add(" . $dtitem++ .",0,'" . GetStringForJavaScript("View Addressbook") . "','$urlCom','','','" . "images/user.png','" . "images/user.png');\r\n";
-
-// $dtree .= "d.add(" . $dtitem++ .",-1,'" . GetStringForJavaScript("Logout") . "','logout.php','" . "" ."');\r\n";
-
-// $dtree .= "document.write(d);";
 
 
 
@@ -87,9 +52,37 @@ foreach ($IMAPFolderList as &$Item) {
 	</div>
 <ul>
 	<li style="color: white;">Welcome <?php echo $username; ?></li>
-	<li style="color: white;">Inbox</li>
-	<li style="color: white;">Sent</li>
-	<li style="color: white;">Trash</li>
+
+    <?php
+
+    
+        $IMAPFolderList = array("Inbox", "Drafts", "Sent", "Trash");
+
+        foreach($IMAPFolderList as &$Item) {
+        try{
+        $obIMAPFolder = $obIMAPFolders->ItemByName($Item);
+        $IMAPFolderName = $obIMAPFolder->Name;
+        $IMAPFolderDBID = $obIMAPFolder->ID;
+        $urlIMAP = htmlentities("https://localhost/YupMail/index.php?page=imapfolderview&imapfolderName=".$IMAPFolderName);
+        
+
+        //$dtree .= "d.add(" . $dtitem++ .",1,'" . GetStringForJavaScript("$IMAPFolderName") . "','$urlIMAP','','','" . "images/user.png','" . "images/user.png');\r\n";    
+        
+        ?>
+        
+
+        <li style="color: white;" ><a href = "<?php echo $urlIMAP; ?>" ><?php echo $IMAPFolderName?></a></li>
+        <?php
+        }
+        catch(Exception $e){
+
+        }
+
+    //$value = $value * 2;
+}
+
+    ?>
+
 	<li style="color: white;" onclick="to_profile()">Profile</li>
 	<li style="color: white;" onclick="to_change()">Change Password</li>
 	<li style="color: white;" onclick="to_compose()">Compose Mail</li>
