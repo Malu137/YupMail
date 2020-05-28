@@ -1,0 +1,71 @@
+body {
+    font-family: Arial;
+}
+
+.list-form-container {
+    background:#e1f4f3;
+    border:thin #2a7886;
+    padding: 20px;
+    border-radius: 2px;
+}
+
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+
+.mailcolumn {
+    float: left;
+    padding: 10px 0px;
+}
+
+table {
+    width: 100%;    
+    background: #FFF;
+}
+
+td, th {
+    border-bottom: 1px solid #dddddd;
+    border-top-width: 0px;
+    border-bottom-width: 1px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+
+    text-align: left;
+    padding: 8px;
+    width: auto;
+}
+
+.mailcontent-div {
+    position:relative;
+}
+
+.mailcontent-div span.column {
+    width: 90%;
+}
+
+.date {
+    position: absolute;
+    right: 8px;
+    padding: 10px 0px;
+}

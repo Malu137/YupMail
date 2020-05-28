@@ -13,7 +13,7 @@ $action = hmailGetVar("action","");
 function ProfileUpdateStatus($errorValue)
 {
 	global $hmail_config;
-	header("refresh: 0; url=" . $hmail_config['rooturl'] . "index.php?page=addressbk&status=".$errorValue );
+	header("refresh: 0; url=" . $hmail_config['rooturl'] . "index.php?page=addressbk_CL&status=".$errorValue );
     exit();	   
 }
 
@@ -76,14 +76,14 @@ function SaveProfile($accountAddress)
 		if ($editedUsername == null || $editedEmail == null)
 	{
 		global $hmail_config;
-			header("refresh: 0; url=" . $hmail_config['rooturl'] . "index.php?page=addressbk&error=1");
+			header("refresh: 0; url=" . $hmail_config['rooturl'] . "index.php?page=addressbk_CL&error=1");
 		exit();
 
 	}
 		elseif (!filter_var($editedEmail, FILTER_VALIDATE_EMAIL))
 		{
 			global $hmail_config;
-			header("refresh: 0; url=" . $hmail_config['rooturl'] . "index.php?page=addressbk&error=2");
+			header("refresh: 0; url=" . $hmail_config['rooturl'] . "index.php?page=addressbk_CL&error=2");
 		exit();
 
 		}

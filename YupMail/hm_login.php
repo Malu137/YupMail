@@ -43,8 +43,9 @@
             	              <?php }
             	            ?>
                            <p style = "font-size:14px;">
-            	            <?php EchoTranslation("Email")?>
-            	            <input type="text" name="username" size="25" maxlength="256" class = "inpt"/>
+                           <?php EchoTranslation("Email")
+                           ?>
+            	            <input type="text" name="username" size="25" maxlength="256" class = "inpt"  />
 				               <p style="text-direction:rtl;font-size:14px;"><?php echo("@yup.mail") ?></p></p>
                            <p style = "font-size:14px;">
             	            <?php EchoTranslation("Password")?></br>
@@ -59,7 +60,7 @@
                  </div>
           </article>
           <div class="half bg" style="background-color: black;text-align:center;"><img src ="images\YupMailLogo.png" >
-         <p style="color:aliceblue;"> Your secure Mail</br>[need to edit] </p></div>
+         <p style="color:aliceblue;"> Your secure Mail</br> </p></div>
 </section>
    
    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>

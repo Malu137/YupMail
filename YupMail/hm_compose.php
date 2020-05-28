@@ -7,7 +7,7 @@
 <form method= 'POST' action ="<?php echo $hmail_config['rooturl']; ?>index.php" onSubmit="return formCheck(this);" name= "mainform">
 <?php
 		PrintHiddenCsrfToken();
-      	PrintHidden("page", "background_compose");
+      	PrintHidden("page", "background_compose_smtp");
 
    	?>
 <table width="450px">

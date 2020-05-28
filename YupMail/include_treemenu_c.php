@@ -43,6 +43,16 @@ $imapFolderCount = $obIMAPFolders->Count;
 
 
 ?>
+<style>
+        .sidelist{
+            text-decoration: none;
+            color:white;
+
+        }
+        .sidelist:hover {
+  text-decoration: underline;
+}
+    </style>
 
 <div id="sidebar">
 	<div class="toggle-btn" onclick="toggleSidebar()">
@@ -71,7 +81,7 @@ $imapFolderCount = $obIMAPFolders->Count;
         ?>
         
 
-        <li style="color: white;" ><a href = "<?php echo $urlIMAP; ?>" ><?php echo $IMAPFolderName?></a></li>
+        <li style="color: white;" ><a href = "<?php echo $urlIMAP; ?>" class="sidelist"><?php echo $IMAPFolderName?></a></li>
         <?php
         }
         catch(Exception $e){
@@ -82,12 +92,13 @@ $imapFolderCount = $obIMAPFolders->Count;
 }
 
     ?>
+    
 
-	<li style="color: white;" onclick="to_profile()">Profile</li>
-	<li style="color: white;" onclick="to_change()">Change Password</li>
-	<li style="color: white;" onclick="to_compose()">Compose Mail</li>
-	<li style="color: white;" onclick="to_address()">Address Book</li>
-	<li style="color: white;" onclick="to_logout()">Logout</li>
+	<li style="color: white;" ><a href = "https://localhost/YupMail/index.php?page=profile" class ="sidelist">Profile</a></li>
+	<li style="color: white;" ><a href = "https://localhost/YupMail/index.php?page=changepw" class ="sidelist">Change Password</a></li>
+	<li style="color: white;" ><a href = "https://localhost/YupMail/index.php?page=compose_mail" class="sidelist" >Compose Mail</a></li>
+	<li style="color: white;" ><a href = "https://localhost/YupMail/index.php?page=addressbk_CL" class="sidelist">Address Book</a></li>
+	<li style="color: white;" ><a href = "https://localhost/YupMail/logout.php" class="sidelist">Logout</a></li>
 </ul>	
 </div>
 

@@ -77,7 +77,7 @@
 		<script type="text/javascript" src="include/dtree.js"></script>
 		<script type="text/javascript" src="include/tabber/tabber.js"></script>
 		<script type="text/javascript" src="include/functions.js"></script>
-
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
       
 		<script type="text/javascript">
 		function ConfirmDelete(name, url)
@@ -114,6 +114,7 @@
          if (hmail_isloggedin())
          {
          ?>
+
             <td valign="top" width="240">
 				<div class="dtree" id="dtree">
 		

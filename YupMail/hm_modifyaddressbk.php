@@ -76,14 +76,20 @@ if($action=='edit')
 
     ?>
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+<link rel="stylesheet" type="text/css" href="style_editprofile.css">
 
-    
+
+<div class="container" id="container">
+<div class="form-container">
+
 <form method = 'POST' action ="<?php echo $hmail_config['rooturl']; ?>index.php" onSubmit="return formCheck(this);" name= "mainform">
 	<?php
 		PrintHiddenCsrfToken();
       	PrintHidden("page", "background_modifyaddressbk");
 
        ?>
+    
     <table >
        <tr> 
 			<td> <ul>Contact Name : 		</ul></td>
@@ -109,9 +115,12 @@ if($action=='edit')
 				<td><ul>Gender :			</ul></td>
 				<td><ul>
                 <!--<input type="text" name="contactGender" size="25" maxlength="256" value ="<?php echo $profileGender ?>">-->
-                <input type="radio" name="contactGender" value="Male"> Male
-					<input type="radio" name="contactGender" value="Female"> Female
-					<input type="radio" name="contactGender" value="Other"> Other
+                <input type="radio" name="contactGender" value="Male" style="width:30%;background:#bef0eb;"> Male
+                <br>
+                    <input type="radio" name="contactGender" value="Female"style="width:30%;background:#bef0eb;"> Female
+                    <br>
+                    <input type="radio" name="contactGender" value="Other" style="width:30%;background:#bef0eb;"> Other
+                    
                 </ul></td>
 			</tr>
 			<tr>
@@ -136,9 +145,11 @@ if($action=='edit')
             </tr>
             <tr>
                 <td>
-            <input type="submit" name="Add" value ="Add" >
+            <input type="submit" name="Add" value ="Add" class="reset_bt">
             </td>
             </tr>
 
         </table>
 </form>
+</div>
+</div>

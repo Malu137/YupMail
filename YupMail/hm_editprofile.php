@@ -62,13 +62,8 @@ if (!defined('IN_WEBADMIN'))
 	
 	
 ?>
-<!DOCTYPE html>
-<html>    
-<head>        
-	<meta charset="UTF-8">
-	        <title><?php //echo $profile_data['username'] ?>'s Profile</title>
-</head>
-<body>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+<link rel="stylesheet" type="text/css" href="style_editprofile.css">
 
  
     
@@ -83,7 +78,8 @@ if (!defined('IN_WEBADMIN'))
 	}
 		{ 
 	?> 
-	
+	<div class="container" id="container">
+<div class="form-container">
      
 	<form method = 'POST' action ="<?php echo $hmail_config['rooturl']; ?>index.php" onSubmit="return formCheck(this);" name= "mainform">
 	<?php
@@ -91,7 +87,8 @@ if (!defined('IN_WEBADMIN'))
       	PrintHidden("page", "background_editprofile");
 
    	?>
-	   </br>
+	   
+	<br>
 		<table >
 			<tr> 
 				<td> <ul>User Mail : 		</ul></td>
@@ -116,9 +113,11 @@ if (!defined('IN_WEBADMIN'))
 				<td><ul>
 					
 					<input type="hidden" name="gender" size="25" maxlength="256" value ="<?php echo $profileGender; ?>" />
-					<input type="radio" name="editedGender" value="Male"> Male
-					<input type="radio" name="editedGender" value="Female"> Female
-					<input type="radio" name="editedGender" value="Other"> Other
+					<input type="radio" name="editedGender" value="Male" style="width:30%;background:#bef0eb;" /> Male
+					<br>
+					<input type="radio" name="editedGender" value="Female"style="width:30%;background:#bef0eb;"/> Female
+					<br>
+					<input type="radio" name="editedGender" value="Other" style="width:30%;background:#bef0eb;" /> Other
 				</ul></td>
 			</tr>
 			<tr>
@@ -152,18 +151,20 @@ if (!defined('IN_WEBADMIN'))
 			</td>
 			</tr>
 
-
 		</table>
-		<input type="submit" value="Save" />
+		<div style="width:90%;" align="right">
+		<input type="submit" class= "reset_bt"value="Save" />		
+		</div>
 
 	</form>
-		</br>
-		</br>
+	</div>
+		</div style="width:70%;" align="right">
+		<br>
+		<button>
 		<a href=<?php echo $hmail_config['rooturl']; ?>index.php?page=profile>View Profile
 		</a> 
+		</button>
 	<?php
 		}
 	?>
-	</h3>        
-</body>
-</html> 
+

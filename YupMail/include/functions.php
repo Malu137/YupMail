@@ -147,6 +147,8 @@ function ExceptionHandler($exception)
 function ErrorHandler( $errno, $errstr, $errfile )
 {
    $errfile = basename($errfile);
+
+   echo($errno."  ".$errstr."\n");
    
    include "error.php";
    

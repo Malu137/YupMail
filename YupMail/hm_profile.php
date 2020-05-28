@@ -58,26 +58,24 @@
 	
 	
 ?>
-<!DOCTYPE html>
-<html>    
-<head>        
-	<meta charset="UTF-8">
-			<title><?php //echo $profile_data['username'] ?>'s Profile</title>
-			<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-</head>
-<body>
+
 
  
     
 	<?php //echo $profile_username ?>
-    <h3>Personal Information 
+    <h3>Personal Information </h3>       
 	<?php 
 		//$visitor = $_SESSION['username'];
         //if ($user == $visitor)
 		{ 
-	?>      
-	   
-		<table >
+	?>    
+	
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" />
+<link rel="stylesheet" type="text/css" href="style_profile.css">
+	
+<div class="container" id="container">
+	<div class="form-container" align="center">
+		<table align="center" >
 			<tr> 
 				<td> <ul>User Mail : 		</ul></td>
 				<td> <ul><?php echo $accountAddress; ?></ul></td>
@@ -116,21 +114,22 @@
 		</ul>
 			</td>
 			</tr>
-
-
 		</table>
-
-
-
-
-
-		</br>
-		</br>
+		</div>
+		</div>
+		<div align="right" style="width:70%;">
+		<br>
+		<button >
 		<a href="index.php?page=editprofile&action=edit&accountid=' . $obAccount->ID . '&domainid='. $obDomain->ID">Edit Profile
-		</a> 
+		</a>
+		
+		</div>
+			
+	</button>
+
+		 
 	<?php
 		}
 	?>
-	</h3>        
-</body>
-</html> 
+	 
+

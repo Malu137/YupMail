@@ -24,7 +24,7 @@
     echo "Address book of ".$accountAddress;
     ?>
     </br>
-    <a href="index.php?page=modifyaddressbk&action=add&accountid=' . $obAccount->ID . '&domainid='. $obDomain->ID"> Add Contact
+    <a href="index.php?page=modifyaddressbk&action=add&accountid=' . $obAccount->ID . '&domainid='. $obDomain->ID" style='text-decoration:none;color:white;'> Add Contact
 		</a> 
 		</br>
     <?php

@@ -11,11 +11,11 @@ function to_change(){
 }
 
 function to_compose(){
-    location.replace("index.php?page=compose");
+    location.replace("index.php?page=compose_mail");
 }
 
 function to_address(){
-    location.replace("index.php?page=addressbk");
+    location.replace("index.php?page=addressbk_CL");
 }
 function to_logout(){
     location.replace("logout.php");
