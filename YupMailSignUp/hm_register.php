@@ -90,7 +90,7 @@
                  </div>
           </article>
           <div class="half bg" style="background-color: black;text-align:center;"><img src ="images\YupMailLogo.png" >
-         <p style="color:aliceblue;"> Your secure Mail</br>[need to edit] </p></div>
+         <p style="color:aliceblue;"> Your secure Mail</br></p></div>
 </section>
    
    <script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js'></script>
